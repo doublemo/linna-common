@@ -61,15 +61,5 @@ type Initializer interface {
 
 // LinnaModule 模块功能接口
 type LinnaModule interface {
-	AuthenticateApple(ctx context.Context, token, username string, create bool) (string, string, bool, error)
-	AuthenticateCustom(ctx context.Context, id, username string, create bool) (string, string, bool, error)
-	AuthenticateDevice(ctx context.Context, id, username string, create bool) (string, string, bool, error)
-	AuthenticateEmail(ctx context.Context, email, password, username string, create bool) (string, string, bool, error)
-	AuthenticateFacebook(ctx context.Context, token string, importFriends bool, username string, create bool) (string, string, bool, error)
-	AuthenticateFacebookInstantGame(ctx context.Context, signedPlayerInfo string, username string, create bool) (string, string, bool, error)
-	AuthenticateGameCenter(ctx context.Context, playerID, bundleID string, timestamp int64, salt, signature, publicKeyUrl, username string, create bool) (string, string, bool, error)
-	AuthenticateGoogle(ctx context.Context, token, username string, create bool) (string, string, bool, error)
-	AuthenticateSteam(ctx context.Context, token, username string, create bool) (string, string, bool, error)
-
-	AuthenticateTokenGenerate(userID, username string, exp int64, vars map[string]string) (string, int64, error)
+	Authenticate(ctx context.Context, token, username string, create bool) (string, string, bool, error)
 }
