@@ -17,13 +17,30 @@
 // LastEditors: randyma
 // LastEditTime: 2022-05-12 18:07:16
 // Description:
-// Reference: https://github.com/heroiclabs/nakama-common
 
 package runtime
 
 import (
 	"context"
 	"database/sql"
+)
+
+type RuntimeContextValueKT string
+
+const (
+	RUNTIME_CTX_ENV              RuntimeContextValueKT = "env"              // 环境变量Key
+	RUNTIME_CTX_MODE             RuntimeContextValueKT = "execution_mode"   // 运行时模式
+	RUNTIME_CTX_NODE             RuntimeContextValueKT = "node"             // 节点名称
+	RUNTIME_CTX_HEADERS          RuntimeContextValueKT = "headers"          // HTTP头
+	RUNTIME_CTX_QUERY_PARAMS     RuntimeContextValueKT = "query_params"     // HTTP query
+	RUNTIME_CTX_USER_ID          RuntimeContextValueKT = "user_id"          // 用户ID
+	RUNTIME_CTX_USERNAME         RuntimeContextValueKT = "username"         // 用户名称
+	RUNTIME_CTX_VARS             RuntimeContextValueKT = "vars"             // 变量存储
+	RUNTIME_CTX_USER_SESSION_EXP RuntimeContextValueKT = "user_session_exp" // 用户会话过期时间
+	RUNTIME_CTX_SESSION_ID       RuntimeContextValueKT = "session_id"       // 用户会话ID
+	RUNTIME_CTX_LANG             RuntimeContextValueKT = "lang"             // 用户语言
+	RUNTIME_CTX_CLIENT_IP        RuntimeContextValueKT = "client_ip"        // 客户端IP
+	RUNTIME_CTX_CLIENT_PORT      RuntimeContextValueKT = "client_port"      // 客户端端口
 )
 
 // Logger公开了一个日志框架以在模块中使用。它公开了特定于级别的日志函数和一组通用函数，以实现兼容性
