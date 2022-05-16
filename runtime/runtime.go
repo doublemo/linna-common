@@ -43,6 +43,8 @@ const (
 	RUNTIME_CTX_CLIENT_PORT      RuntimeContextValueKT = "client_port"      // 客户端端口
 )
 
+type RuntimeRPCFunction func(ctx context.Context, logger Logger, db *sql.DB, m LinnaModule, payload string) (string, error)
+
 // Logger公开了一个日志框架以在模块中使用。它公开了特定于级别的日志函数和一组通用函数，以实现兼容性
 type Logger interface {
 
