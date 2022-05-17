@@ -27,6 +27,10 @@ import (
 
 type RuntimeContextValueKT string
 
+func (k RuntimeContextValueKT) String() string {
+	return string(k)
+}
+
 const (
 	RUNTIME_CTX_ENV              RuntimeContextValueKT = "env"              // 环境变量Key
 	RUNTIME_CTX_MODE             RuntimeContextValueKT = "execution_mode"   // 运行时模式
