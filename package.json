@@ -1,0 +1,18 @@
+{
+    "name": "linna-runtime",
+    "version": "0.1.0",
+    "description": "The runtime Type definitions for the Linna server.",
+    "author": "Randy Ma",
+    "license": "Apache-2.0",
+    "homepage": "",
+    "keywords": [
+        "linna",
+        "typescript",
+        "game server"
+    ],
+    "typings": "./index.d.ts",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/doublemo/linna-common.git"
+    }
+  }

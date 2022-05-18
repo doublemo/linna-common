@@ -47,8 +47,6 @@ const (
 	RUNTIME_CTX_CLIENT_PORT      RuntimeContextValueKT = "client_port"      // 客户端端口
 )
 
-type RuntimeRPCFunction func(ctx context.Context, logger Logger, db *sql.DB, m LinnaModule, payload string) (string, error)
-
 // Logger公开了一个日志框架以在模块中使用。它公开了特定于级别的日志函数和一组通用函数，以实现兼容性
 type Logger interface {
 
@@ -79,7 +77,7 @@ type Logger interface {
 //
 // 注意：您不能缓存对它的引用，并在以后再次使用它，因为这可能会产生意外的副作用
 type Initializer interface {
-	RegisterRpc(id string, fn RuntimeRPCFunction) error
+	RegisterRpc(id string, fn func(ctx context.Context, logger Logger, db *sql.DB, na LinnaModule, payload string) (string, error)) error
 }
 
 // LinnaModule 模块功能接口
