@@ -1,4 +1,4 @@
-declare namespace naruntime  {
+declare namespace linna  {
      /**
      * The context of the current execution; used to observe and pass on cancellation signals.
      */
@@ -67,13 +67,13 @@ declare namespace naruntime  {
          * @throws {TypeError}
          * @returns A response payload or error if one occurred.
          */
-        (ctx: Context, logger: Logger, na: Linna, payload: string): string | void;
+        (ctx: Context, logger: Logger, linna: Module, payload: string): string | void;
     }
 
     /**
      * The server APIs available in the game server.
      */
-     export interface Linna {
+     export interface Module {
         /**
          * Convert binary data to string.
          *
@@ -460,6 +460,6 @@ declare namespace naruntime  {
          * @param nk - The Nakama server APIs.
          * @param initializer - The injector to initialize features in the game server.
          */
-        (ctx: Context, logger: Logger, na: Linna, initializer: Initializer): void;
+        (ctx: Context, logger: Logger, Linna: Module, initializer: Initializer): void;
     }
 }
